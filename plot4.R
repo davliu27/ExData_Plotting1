@@ -22,6 +22,8 @@ Sub_metering_3<-subsetData[,"Sub_metering_3"]
 Global_reactive_power<-subsetData[,"Global_reactive_power"]
 
 #plotting and creating png file
+png("plot4.png",width=480,height=480,type="window")
+
 par(mfrow=c(2,2),ps=12)
 
 plot(date_time,global_active_power_num,type="l",ylab="Global Active Power",xlab="")
@@ -35,5 +37,4 @@ legend("topright",lwd=1,lty=c(1,1,1),col=c("black","blue","red1"), legend=c("Sub
 
 plot(date_time,Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power")
 
-dev.copy(png, file="plot4.png")
 dev.off()
